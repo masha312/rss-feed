@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="rss.css">
+    <script>
+         $(function () {
+            $("#container").submit(function (event) {
+
+        var login_success = false;
+        var chance = Math.random() * 10;
+
+        if (chance > 5) {
+            login_success = true;
+        }
+
+        if (login_success === true) {
+            $(function () {
+                $("#feed").text("");
+                $("form").hide();
+                $.get("https://newsapi.org/v2/top-headlines?sources=reuters&apiKey=5b839b988f1c4e1eb3e7f86da6619d51", function (data) {
+                    $.each(data.articles, function (i, item) {
+                        var title = data.articles[i].title;
+                        var source_name = data.articles[i].source.name;
+                        var image = data.articles[i].urlToImage;
+                        var url = data.articles[i].url;
+                        var description = data.articles[i].description;
+                        var date = data.articles[i].publishedAt;
+                        $("#feed").append("<div id='card'><a target='blank' href=" + url + "><span id='title'>" + title + "</span></br></br><img src=" + image + "></br></br>" + description + "</br></br><i> Source: " + source_name + " | Published: " + date + "</a></div>");
+                    });
+                });
+                $.get("https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=5b839b988f1c4e1eb3e7f86da6619d51", function (data) {
+                    $.each(data.articles, function (i, item) {
+                        var title = data.articles[i].title;
+                        var source_name = data.articles[i].source.name;
+                        var image = data.articles[i].urlToImage;
+                        var url = data.articles[i].url;
+                        var description = data.articles[i].description;
+                        var date = data.articles[i].publishedAt;
+                        $("#feed").append("<div id='card'><a target='blank' href=" + url + "><span id='title'>" + title + "</span></br></br><img src=" + image + "></br></br>" + description + "</br></br><i> Source: " + source_name + " | Published: " + date + "</a></div>");
+                    });
+                });
+            });
+        } else {
+            window.location.replace("http://google.com");
+        }
+        event.preventDefault();
+    });
+});
+    </script>
+</head>
+
+<body>
+        <div id="container">
+                <h1 id="top">TOP HEADLINES</h1>
+                <form>
+                  <label>E-mail: </label>
+                  <input type="email" name="email" data-validate="required email" autofocus />
+                  <label>Password: </label>
+                  <input type="password" data-validate="required" name="password" />
+                  <input type="submit" id="loginbtn" name="submit" value="Log In" />
+                </form>
+              </div>
+
+    
+    <div id="feed">
+    </div>
+</body>
+
+</html>

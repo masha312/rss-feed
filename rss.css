@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    font-family: 'Monserrat', sans-serif;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-left: 65px;
+    padding-bottom: 12px;
+    text-align: left;
+    text-transform: uppercase;
+    height: 45px;
+    width: 93%;
+    margin-left: 10px;
+    color: rgba(68, 68, 68, 0.411);
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.247);
+    
+}
+
+#title {
+    font-size: 22px;
+    
+}
+
+#feed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+img {
+    position: relative;
+    width: 99%;
+    
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+#card {
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 450px;
+    width: 40%;
+    background-color: rgba(95, 95, 95, 0.658);
+    color: white;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    overflow: auto;
+    transition-duration: 0.4s;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+}
+
+#card:hover {
+    background-color: rgb(1, 101, 141);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+    
+
+#card::-webkit-scrollbar-track
+{
+
+  background-color: transparent;
+}
+
+#card::-webkit-scrollbar
+{
+  width: 12px;
+  
+
+}
+
+#card::-webkit-scrollbar-thumb
+{
+  background-color: #d6dbdb75;
+  height: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 75px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    margin-bottom: 16px;
+    width: 256px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.459);
+}
+
+input:hover {
+    transition-duration: 0.3s;
+    border-bottom-color: rgba(1, 101, 141, 0.548);
+}
+
+input:focus {
+    outline: none;
+    transition-duration: 0.3s;
+    border-bottom-color: rgba(1, 101, 141, 0.548);
+}
+
+label {
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+
+#loginbtn {
+    margin-top: 8px;
+    border: none;
+    text-transform: uppercase;
+    font-family: 'Monserrat', sans-serif;
+    transition-duration: 0.3s;
+    width: 88px;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.658);
+}
+
+#loginbtn:hover {
+    background-color: rgb(161, 160, 160);
+    color: white;
+}
